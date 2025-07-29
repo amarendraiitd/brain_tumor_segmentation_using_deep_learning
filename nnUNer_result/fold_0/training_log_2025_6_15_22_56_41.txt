@@ -1,0 +1,22 @@
+
+#######################################################################
+Please cite the following paper when using nnU-Net:
+Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2021). nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation. Nature methods, 18(2), 203-211.
+#######################################################################
+ 
+2025-06-15 22:56:41.922158: do_dummy_2d_data_aug: False 
+2025-06-15 22:56:41.938124: Using splits from existing split file: /scratch/scai/mtech/aib232081/nnUNet_preprocessed/Task501_GLIOMA/splits_final.json 
+2025-06-15 22:56:41.940787: The split file contains 1 splits. 
+2025-06-15 22:56:41.941342: Desired fold for training: 0 
+2025-06-15 22:56:41.941986: This split has 1080 training and 135 validation cases. 
+
+This is the configuration used by this training:
+Configuration name: 3d_fullres
+ {'data_identifier': 'nnUNetPlans_3d_fullres', 'preprocessor_name': 'DefaultPreprocessor', 'batch_size': 2, 'patch_size': [128, 160, 112], 'median_image_size_in_voxels': [142.0, 175.0, 136.0], 'spacing': [1.0, 1.0, 1.0], 'normalization_schemes': ['ZScoreNormalization', 'ZScoreNormalization', 'ZScoreNormalization', 'ZScoreNormalization'], 'use_mask_for_norm': [True, True, True, True], 'resampling_fn_data': 'resample_data_or_seg_to_shape', 'resampling_fn_seg': 'resample_data_or_seg_to_shape', 'resampling_fn_data_kwargs': {'is_seg': False, 'order': 3, 'order_z': 0, 'force_separate_z': None}, 'resampling_fn_seg_kwargs': {'is_seg': True, 'order': 1, 'order_z': 0, 'force_separate_z': None}, 'resampling_fn_probabilities': 'resample_data_or_seg_to_shape', 'resampling_fn_probabilities_kwargs': {'is_seg': False, 'order': 1, 'order_z': 0, 'force_separate_z': None}, 'architecture': {'network_class_name': 'dynamic_network_architectures.architectures.unet.PlainConvUNet', 'arch_kwargs': {'n_stages': 6, 'features_per_stage': [32, 64, 128, 256, 320, 320], 'conv_op': 'torch.nn.modules.conv.Conv3d', 'kernel_sizes': [[3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]], 'strides': [[1, 1, 1], [2, 2, 2], [2, 2, 2], [2, 2, 2], [2, 2, 2], [2, 2, 1]], 'n_conv_per_stage': [2, 2, 2, 2, 2, 2], 'n_conv_per_stage_decoder': [2, 2, 2, 2, 2], 'conv_bias': True, 'norm_op': 'torch.nn.modules.instancenorm.InstanceNorm3d', 'norm_op_kwargs': {'eps': 1e-05, 'affine': True}, 'dropout_op': None, 'dropout_op_kwargs': None, 'nonlin': 'torch.nn.LeakyReLU', 'nonlin_kwargs': {'inplace': True}}, '_kw_requires_import': ['conv_op', 'norm_op', 'dropout_op', 'nonlin']}, 'batch_dice': False} 
+ 
+These are the global plan.json settings:
+ {'dataset_name': 'Task501_GLIOMA', 'plans_name': 'nnUNetPlans', 'original_median_spacing_after_transp': [1.0, 1.0, 1.0], 'original_median_shape_after_transp': [142, 175, 136], 'image_reader_writer': 'SimpleITKIO', 'transpose_forward': [0, 1, 2], 'transpose_backward': [0, 1, 2], 'experiment_planner_used': 'ExperimentPlanner', 'label_manager': 'LabelManager', 'foreground_intensity_properties_per_channel': {'0': {'max': 9210.0, 'mean': 1083.545654296875, 'median': 776.2343139648438, 'min': -38.0, 'percentile_00_5': 60.319400787353516, 'percentile_99_5': 3614.736328125, 'std': 863.6681518554688}, '1': {'max': 37011.69921875, 'mean': 1248.953857421875, 'median': 950.2376708984375, 'min': 0.0, 'percentile_00_5': 64.50062900543213, 'percentile_99_5': 5005.8203125, 'std': 1037.698486328125}, '2': {'max': 12372.0, 'mean': 1316.230224609375, 'median': 1016.6731262207031, 'min': 0.0, 'percentile_00_5': 215.22721061706542, 'percentile_99_5': 5257.6171875, 'std': 933.8424682617188}, '3': {'max': 4578.0, 'mean': 707.5701904296875, 'median': 619.3465881347656, 'min': -1.0, 'percentile_00_5': 11.428452491760254, 'percentile_99_5': 2516.0, 'std': 507.3000183105469}}} 
+ 
+2025-06-15 22:56:46.516302: unpacking dataset... 
+2025-06-15 22:56:56.227066: unpacking done... 
+2025-06-15 22:56:56.237539: Unable to plot network architecture: nnUNet_compile is enabled! 
